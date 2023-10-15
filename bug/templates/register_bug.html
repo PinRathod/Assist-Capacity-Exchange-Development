@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<form action="" method="post">
+{% csrf_token %}
+<div class="wrapper">
+    <div class="title">
+      Register Bug Here
+    </div>
+    <div class="form">
+     <div class="inputfield">
+          <label>Description:</label>
+          <textarea  name="text" class="textarea"></textarea>
+    </div> 
+    
+    <div class="inputfield">
+          <label>Bug Type:</label>
+          <div class="custom_select">
+            <select  name="bug_type">
+               <option value="">None</option>
+               <option value="Error">Error</option>
+               <option value="New Feature">New Feature</option>
+             </select>
+          </div>
+    </div> 
+
+    <div class="inputfield">
+          <label>Report Date:</label>
+          <input type="date"  name="date" class="input">
+    </div> 
+     
+    <div class="inputfield">
+          <label>Status:</label>
+          <div class="custom_select">
+            <select  name="status">
+              <option value=" ">None</option>
+              <option value="To Do">To Do</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+            </select>
+          </div>
+       </div> 
+        
+    <div class="inputfield">
+        <input type="submit" value="Register" class="btn">
+    </div>
+  </div>
+</div>
+</form>
+</body>
+</html>  

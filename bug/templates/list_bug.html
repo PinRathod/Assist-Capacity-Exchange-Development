@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>List of Registered Bug</h1>
+
+<p><a href=" {% url 'register_bug' %}" >Register a New Bug</a></p>
+
+{% if bug_data %}
+    <ul>
+    {% for data in bug_data %}
+        <li><a href="{% url 'view_bug' data.id %}">{{data.description }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Bugs are registered!</p>
+{% endif %}
+
+</body>
+</html>  
